@@ -5,17 +5,19 @@
   "type": "module",
   "homepage": "https://abdoahmed26.github.io/Facebook",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --force",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "gh-pages": "^6.1.1",
+    "lucide-react": "^0.396.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.0",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.23.1",
+    "react-share": "^5.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

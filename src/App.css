@@ -1,1 +1,21 @@
 
+.active {
+    color: rgb(37 99 235 / 1);
+}
+.active::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: rgb(37 99 235 / 1);
+    left: 0;
+    bottom: -8px;
+}
+.calcWidth {
+    width: calc(100%/3);
+}
+@media(max-width:640px){
+    .calcWidth {
+        width: calc(100%/2);
+    }
+}

@@ -1,7 +1,10 @@
+import { Eye, EyeOff } from "lucide-react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+    const [hidePass,setPass] = useState("password")
     const { register, handleSubmit, formState: { errors } } = useForm()
     const onSubmit = (data) => {
         console.log(data)
@@ -23,7 +26,14 @@ const Login = () => {
                                     }
                                 </div>
                                 <div className="my-3">
-                                    <input type="password" {...register("password",{required:true})} placeholder="Password" className="py-2 px-2 w-full outline-none border rounded-md"/>
+                                    <div className="py-2 px-2 w-full border rounded-md flex justify-between">
+                                        <input type={hidePass} {...register("password",{required:true})} placeholder="Password" className="w-full outline-none"/>
+                                        {
+                                            hidePass==="password" ?
+                                            <EyeOff onClick={()=>setPass("text")} size={20} className="cursor-pointer"/>
+                                            :<Eye onClick={()=>setPass("password")} size={20} className="cursor-pointer"/>
+                                        }
+                                    </div>
                                     {
                                         errors.password?.type ==="required" &&
                                         <p className="text-red-500 animate-bounce">Password is required</p>
